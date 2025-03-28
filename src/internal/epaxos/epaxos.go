@@ -1,13 +1,13 @@
 package epaxos
 
 type core struct {
-	commitch chan command
+	commitch chan *Command
 }
 
 func NewCore() *core {
 	return &core{}
 }
-func (c *core) Propose(cmd *command) {
+func (c *core) Propose(cmd *Command) {
 
 }
 
@@ -19,6 +19,6 @@ func (c *core) handler() {
 
 }
 
-func (c *core) CommitChannel() chan command {
+func (c *core) CommitChannel() chan *Command {
 	return c.commitch
 }

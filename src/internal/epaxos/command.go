@@ -1,11 +1,11 @@
 package epaxos
 
-type command struct {
+type Command struct {
 	key   string
 	value []byte
 	op    int
 }
 
-func (c *command) Conflic(other *command) bool {
+func (c *Command) Conflic(other *Command) bool {
 	return c.key == other.key
 }
